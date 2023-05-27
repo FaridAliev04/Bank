@@ -1,0 +1,121 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Space Grotesk';
+}
+.continer{
+    display: flex;
+    justify-content: space-between;
+}
+.background{
+    position: relative;
+    width: 25rem;
+     /* z-index:-1; */
+    height: 41.05rem;
+    background-image: url(./img/bg-main-desktop.png);
+}
+.card_info{
+    position: absolute;
+    width: 23.94rem;
+    height: 11.34rem;
+    left: 5rem;
+    top: 1rem;
+    padding: 2rem;
+    color: white;
+    background-image: url(./img/bg-card-front.png);
+}
+.card_cvc{
+    position: absolute;
+    width: 27.94rem;
+    height: 15.34rem;
+    left: 10rem;
+    top: 20rem;
+    background-image: url(./img/bg-card-back.png);
+}
+.card_info-number{
+    font-size: 2rem;
+    text-align: center;
+}
+.card_infos{
+    width:23rem ;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.card_cvc-number{
+    display: flex;
+    width: 25rem;
+    height: 12.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+span{
+    color:red;
+    opacity: 0;
+}
+.mm_error{
+    opacity: 0;
+}
+.tarix{
+    display: flex;
+    gap: 2px;
+}
+.form{
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 12rem;
+    margin-right: 10rem;
+}
+.end{
+    display: flex;
+    gap: 11rem;
+}
+.input{
+    display: flex;
+    flex-flow: column;
+}
+label{
+    font-size: 1rem;
+}
+.umummi_input{
+    width: 20rem;
+    padding: 10px 25px;
+}
+input{
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 15px;
+}
+form{
+    display: flex;
+    flex-flow: column;
+    gap: 18px;
+}
+.label{
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+.label_input{
+    width: 15rem;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.date-ortaq{
+    width: 4rem;
+}
+#cvc{
+    width: 5rem;
+}
+.form_button{
+    width: 17.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: hsl(278, 94%, 30%);
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 9px;
+}
