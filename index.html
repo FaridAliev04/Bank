@@ -62,14 +62,19 @@
                         </label>
                     </div>
                     <div class="label_input">
-                        <input placeholder="MM"  type="number" class="date-ortaq" name="data" id="mm">
-                        <input placeholder="YY" type="number" name="number" class="date-ortaq" id="yy">
-                        <input placeholder="e.g. 123" type="number" name="data" id="cvc">
+                        <input placeholder="MM" minlength="3" type="number" class="date-ortaq" name="data" id="mm">
+                        <input placeholder="YY" min="3" type="number" name="number" class="date-ortaq" id="yy">
+                        <input placeholder="e.g. 123" minlength="3" type="number" name="data" id="cvc">
                     </div>
                     <div class="end">
-                        <span class="mm_error">
-                            Error
-                        </span>
+                        <div class="date_error">
+                            <span class="mm_error">
+                                Error
+                            </span>
+                            <span class="yy_error">
+                                Error
+                            </span>
+                        </div>
                         <span class="cvc_error">
                             Error
                         </span>

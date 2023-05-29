@@ -9,7 +9,12 @@ const dateMonth=document.querySelector("#mm")
 const mmError=document.querySelector(".mm_error")
 const mmCard=document.querySelector(".ay")
 const dateYear=document.querySelector("#yy")
+const yyError=document.querySelector(".yy_error")
+const yyCard=document.querySelector(".il")
 const cvc=document.querySelector("#cvc")
+const cvcError=document.querySelector(".cvc_error")
+const cvcCard=document.querySelector(".card_cvc-number")
+const submitBtn=document.querySelector(".form_button")
 
 form.addEventListener("submit",function(e){
     e.preventDefault()
@@ -39,10 +44,11 @@ const numberFunc=function(){
     if(numberValue===""){
         numberError.style.opacity="1"
         number.style.borderColor="red"
-    }else if(numberValue.length>11 && numberValue.length<13){
+        cardNumber.textContent="0000 0000 0000 0000 "
+    }else if(numberValue.length>15 && numberValue.length<17){
         numberError.style.opacity="0"
         number.style.borderColor="grey"
-        cardNumber.textContent=numberValue
+        cardNumber.textContent=numberValue.match(new RegExp('.{1,4}', 'g')).join(" ")
     }else{
         numberError.style.opacity="1"
         number.style.borderColor="red"  
@@ -54,19 +60,72 @@ number.addEventListener("keyup",function(){
 })
 
 const mmFunc=function(){
-    const mmValue=dateMonth.value.trim()
+    const mmValue=dateMonth.value
     if(mmValue===""){
         mmError.style.opacity="1"
         mmCard.textContent="00"
-    }else if(mmValue.length>0 && mmValue.length<13){
+        dateMonth.style.borderColor="red"
+    }
+     if(mmValue>0 && mmValue<13){
         mmError.style.opacity="0"
         mmCard.textContent=mmValue
+        dateMonth.style.borderColor="grey"
     }else{
         mmError.style.opacity="1"
         mmCard.textContent="00"
+        dateMonth.style.borderColor="red"
+    } 
+}
+dateMonth.addEventListener("keyup",function(){
+    mmFunc()
+})
+
+const yyFunc=function(){
+    const yyValue=dateYear.value.trim()
+    if(yyValue===""){
+        yyError.style.opacity="1"
+        dateYear.style.borderColor="red"
+        yyCard.textContent="00"
+    } else if(yyValue>22&&yyValue<30){
+        yyError.style.opacity="0"
+        dateYear.style.borderColor="grey"
+        yyCard.textContent=yyValue
+    }else{
+        yyError.style.opacity="1"
+        dateYear.style.borderColor="red"
+        yyCard.textContent="00"
+    }
+   
+}
+dateYear.addEventListener("keyup",function(){
+    yyFunc()
+})
+
+const cvcFunc=function(){
+    const cvcValue=cvc.value.trim()
+    if(cvcValue===""){
+        cvc.style.borderColor="red"
+        cvcError.style.opacity="1"
+        cvcCard.textContent="000"
+    }else if(cvcValue>100 && cvcValue<1000){
+        cvc.style.borderColor="grey"
+        cvcError.style.opacity="0"
+        cvcCard.textContent=cvcValue
+    }else{
+        cvc.style.borderColor="red"
+        cvcError.style.opacity="1"
+        cvcCard.textContent="000"
     }
 }
 
-dateMonth.addEventListener("keyup",function(){
+cvc.addEventListener("keyup",function(){
+    cvcFunc()
+})
+
+submitBtn.addEventListener("click",function(){
     mmFunc()
+    yyFunc()
+    cvcFunc()
+    nameFunc()
+    numberFunc()
 })
