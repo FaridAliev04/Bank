@@ -124,3 +124,35 @@ form{
 .yy_error{
     margin-left: 4.5rem;
 }
+.takk_form{
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 12rem;
+    margin-right: 10rem;
+    display: none;
+}
+.takk_form-header{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 200;
+    width: 16rem;
+}
+.takk_form-text{
+    text-align: center;
+    font-size: 1rem;
+    width: 18rem;
+}
+.takk_form-img{
+    width: 14rem;
+    margin: 0 auto;
+}
+.takk-form_button{
+    width: 17.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: hsl(278, 94%, 30%);
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 9px;
+}

@@ -122,10 +122,25 @@ cvc.addEventListener("keyup",function(){
     cvcFunc()
 })
 
+const complete=document.querySelector(".takk_form")
+const continer=document.querySelector(".continer")
 submitBtn.addEventListener("click",function(){
     mmFunc()
     yyFunc()
     cvcFunc()
     nameFunc()
     numberFunc()
+    const cvcValue=cvc.value.trim()
+    const yyValue=dateYear.value.trim()
+    const mmValue=dateMonth.value
+    const numberValue=number.value
+    const nameValue= fullName.value.trim().charAt(0).toUpperCase()
+
+    if(cvcValue===""&&yyValue===""&&mmValue===""&&numberValue===""&&nameValue===""){
+        complete.style.display="none"
+     
+    }else{
+        complete.style.display="block"
+        form.style.display="none"
+    }
 })
